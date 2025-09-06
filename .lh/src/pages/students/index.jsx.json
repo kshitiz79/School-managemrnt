@@ -1,0 +1,18 @@
+{
+    "sourceFile": "src/pages/students/index.jsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1755984965404,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1755984965404,
+            "name": "Commit-0",
+            "content": "import React from 'react'\nimport { Routes, Route } from 'react-router-dom'\nimport StudentAdmission from './StudentAdmission'\nimport OnlineAdmission from './OnlineAdmission'\nimport StudentDetails from './StudentDetails'\nimport StudentProfileUpdate from './StudentProfileUpdate'\nimport StudentCategories from './StudentCategories'\nimport StudentHouse from './StudentHouse'\nimport DisabledStudents from './DisabledStudents'\nimport MultiClassStudent from './MultiClassStudent'\nimport BulkDelete from './BulkDelete'\n\nconst StudentsRoutes = () => {\n  return (\n    <Routes>\n      <Route path=\"admission\" element={<StudentAdmission />} />\n      <Route path=\"online-admission\" element={<OnlineAdmission />} />\n      <Route path=\"details\" element={<StudentDetails />} />\n      <Route path=\"profile-update\" element={<StudentProfileUpdate />} />\n      <Route path=\"categories\" element={<StudentCategories />} />\n      <Route path=\"houses\" element={<StudentHouse />} />\n      <Route path=\"disabled\" element={<DisabledStudents />} />\n      <Route path=\"multi-class\" element={<MultiClassStudent />} />\n      <Route path=\"bulk-delete\" element={<BulkDelete />} />\n    </Routes>\n  )\n}\n\nexport default StudentsRoutes\n"
+        }
+    ]
+}

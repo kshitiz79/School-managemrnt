@@ -1,0 +1,18 @@
+{
+    "sourceFile": "src/pages/term/index.jsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1755984965404,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1755984965404,
+            "name": "Commit-0",
+            "content": "import React from 'react'\nimport { Routes, Route } from 'react-router-dom'\nimport Term from './Term'\nimport Observation from './Observation'\nimport ObservationParameter from './ObservationParameter'\nimport AssignObservation from './AssignObservation'\nimport DisableReason from './DisableReason'\nimport Template from './Template'\nimport Reports from './Reports'\n\nconst TermRoutes = () => {\n  return (\n    <Routes>\n      <Route path=\"manage\" element={<Term />} />\n      <Route path=\"observation\" element={<Observation />} />\n      <Route path=\"observation-parameter\" element={<ObservationParameter />} />\n      <Route path=\"assign-observation\" element={<AssignObservation />} />\n      <Route path=\"disable-reason\" element={<DisableReason />} />\n      <Route path=\"template\" element={<Template />} />\n      <Route path=\"reports\" element={<Reports />} />\n    </Routes>\n  )\n}\n\nexport default TermRoutes\n"
+        }
+    ]
+}

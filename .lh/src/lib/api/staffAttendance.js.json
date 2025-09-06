@@ -1,0 +1,18 @@
+{
+    "sourceFile": "src/lib/api/staffAttendance.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1755993673754,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1755993673754,
+            "name": "Commit-0",
+            "content": "import mockData from '../mockData'\n\n// Mock API for staff attendance\nconst delay = ms => new Promise(resolve => setTimeout(resolve, ms))\n\nexport const staffAttendanceApi = {\n    async getAttendance(date) {\n        await delay(500)\n\n        // Generate mock staff attendance data\n        const staffWithAttendance = mockData.staff.map(staff => {\n            const hasAttendance = Math.random() > 0.2 // 80% have attendance marked\n\n            let attendance = null\n            if (hasAttendance) {\n                const statuses = ['present', 'absent', 'late', 'half-day']\n                const status = statuses[Math.floor(Math.random() * statuses.length)]\n\n                attendance = {\n                    id: `att-${staff.id}-${date}`,\n                    staffId: staff.id,\n                    date,\n                    status,\n                    timeIn: status !== 'absent' ? '09:00' : '',\n                    timeOut: status !== 'absent' ? '17:00' : '',\n                    remarks: status === 'late' ?\n                        'Traffic delay' :\n                        status === 'half-day' ?\n                        'Medical appointment' :\n                        '',\n                    markedBy: 'admin',\n                    markedAt: new Date().toISOString(),\n                };\n            }\n\n            return {\n                ...staff,\n                attendance,\n            };\n        })\n\n        return {\n            success: true,\n            data: staffWithAttendance,\n        };\n    },\n\n    async saveAttendance(attendanceData) {\n        await delay(300)\n\n        return {\n            success: true,\n            message: 'Attendance saved successfully',\n            data: {\n                id: `att-${attendanceData.staffId}-${attendanceData.date}`,\n                ...attendanceData,\n                markedAt: new Date().toISOString(),\n            }\n        }\n    },\n\n    async bulkMark(bulkData) {\n        await delay(500)\n\n        return {\n            success: true,\n            message: `Bulk attendance marked for ${bulkData.staffIds.length} staff members`,\n            data: {\n                affected: bulkData.staffIds.length,\n                date: bulkData.date,\n                status: bulkData.status,\n            }\n        }\n    },\n\n    async getDepartments() {\n        await delay(200)\n\n        const departments = [\n            ...new Set(mockData.staff.map(staff => staff.department)),\n        ]\n\n        return {\n            success: true,\n            data: departments,\n        };\n    },\n\n    async getAttendanceReport(filters = {}) {\n        await delay(800)\n\n        // Mock report data\n        const report = {\n            summary: {\n                totalStaff: mockData.staff.length,\n                present: Math.floor(mockData.staff.length * 0.85),\n                absent: Math.floor(mockData.staff.length * 0.1),\n                late: Math.floor(mockData.staff.length * 0.05),\n            },\n            trends: [],\n            departmentWise: [],\n        };\n\n        return {\n            success: true,\n            data: report,\n        };\n    },\n};"
+        }
+    ]
+}

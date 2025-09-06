@@ -1,0 +1,18 @@
+{
+    "sourceFile": "src/pages/masters/index.jsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1755984965403,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1755984965403,
+            "name": "Commit-0",
+            "content": "import React from 'react'\nimport { Routes, Route } from 'react-router-dom'\nimport Classes from './Classes'\nimport Sections from './Sections'\nimport Subjects from './Subjects'\nimport SubjectGroups from './SubjectGroups'\nimport AssignClassTeacher from './AssignClassTeacher'\nimport PromoteStudents from './PromoteStudents'\n\nconst MastersRoutes = () => {\n  return (\n    <Routes>\n      <Route path=\"classes\" element={<Classes />} />\n      <Route path=\"sections\" element={<Sections />} />\n      <Route path=\"subjects\" element={<Subjects />} />\n      <Route path=\"subject-groups\" element={<SubjectGroups />} />\n      <Route path=\"assign-class-teacher\" element={<AssignClassTeacher />} />\n      <Route path=\"promote-students\" element={<PromoteStudents />} />\n    </Routes>\n  )\n}\n\nexport default MastersRoutes\n"
+        }
+    ]
+}

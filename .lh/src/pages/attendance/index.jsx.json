@@ -1,0 +1,18 @@
+{
+    "sourceFile": "src/pages/attendance/index.jsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1755984965404,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1755984965404,
+            "name": "Commit-0",
+            "content": "import React from 'react'\nimport { Routes, Route } from 'react-router-dom'\nimport StudentAttendance from './StudentAttendance'\nimport StaffAttendance from './StaffAttendance'\nimport AttendanceByDate from './AttendanceByDate'\nimport ApproveLeave from './ApproveLeave'\nimport QrAttendance from './QrAttendance'\n\nconst AttendanceRoutes = () => {\n  return (\n    <Routes>\n      <Route path=\"student\" element={<StudentAttendance />} />\n      <Route path=\"staff\" element={<StaffAttendance />} />\n      <Route path=\"by-date\" element={<AttendanceByDate />} />\n      <Route path=\"approve-leave\" element={<ApproveLeave />} />\n      <Route path=\"qr\" element={<QrAttendance />} />\n    </Routes>\n  )\n}\n\nexport default AttendanceRoutes\n"
+        }
+    ]
+}
