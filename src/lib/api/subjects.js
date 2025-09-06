@@ -287,7 +287,7 @@ const generateSyllabus = (subjectName, classes) => {
     )
 
     return classes.reduce((acc, cls) => {
-        acc[cls] = syllabusTemplates[subjectName] ? .[cls] || [
+        acc[cls] = syllabusTemplates[subjectName]?.[cls] || [
             `${subjectName} topics for Class ${cls}`,
         ]
         return acc
